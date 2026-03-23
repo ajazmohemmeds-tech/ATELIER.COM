@@ -1,0 +1,189 @@
+.container {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F3F1EC 100%);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    /* Richness grain effect */
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.02;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    z-index: 1;
+}
+
+.header {
+    width: 100%;
+    padding: 2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 50;
+    color: #111111;
+}
+
+.backLink {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: #444444;
+    transition: color 0.3s ease;
+}
+
+.backLink:hover {
+    color: #111111;
+}
+
+.logo {
+    font-family: var(--font-playfair);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.content {
+    max-width: 720px;
+    width: 100%;
+    padding: 120px 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: transparent;
+    border-radius: 20px;
+    position: relative;
+    z-index: 2;
+    /* Vertical Rhythm */
+    gap: 32px;
+    /* Subtle depth */
+    box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.03);
+}
+
+.label {
+    font-family: var(--font-inter), sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #A8A29E;
+    font-weight: 500;
+}
+
+.title {
+    font-family: var(--font-playfair);
+    font-size: 42px;
+    font-weight: 500;
+    color: #111111;
+    line-height: 1.2;
+    margin: 0;
+    /* For Apple-style blur animation, we'll use framer motion */
+}
+
+.hook {
+    font-family: var(--font-inter), sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #444444;
+    margin: 0;
+}
+
+.body {
+    font-family: var(--font-inter), sans-serif;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #555555;
+    font-weight: 400;
+    max-width: 640px;
+    margin: 0;
+}
+
+.body p {
+    margin-bottom: 1.8rem;
+}
+
+.body p:last-child {
+    margin-bottom: 0;
+}
+
+.signatureLines {
+    font-family: var(--font-inter), sans-serif;
+    font-size: 26px;
+    font-weight: 500;
+    color: #C6A15B;
+    /* Soft Gold */
+    line-height: 1.4;
+    margin: 0;
+}
+
+.signatureLines span {
+    display: block;
+}
+
+.buttonContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    font-family: var(--font-inter), sans-serif;
+    font-size: 14px;
+    padding: 14px 32px;
+    border-radius: 999px;
+    background-color: #111111;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.button:hover {
+    background-color: #2A2A2A;
+    transform: scale(1.04);
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 1.5rem 2rem;
+    }
+
+    .content {
+        padding: 80px 1.5rem;
+        gap: 28px;
+    }
+
+    .title {
+        font-size: 30px;
+    }
+
+    .hook {
+        font-size: 18px;
+    }
+
+    .body {
+        font-size: 15px;
+    }
+
+    .signatureLines {
+        font-size: 22px;
+    }
+
+    .button {
+        width: 100%;
+        text-align: center;
+    }
+}

@@ -1,0 +1,178 @@
+.storyPage {
+    background-color: var(--cream-bg);
+    min-height: 100vh;
+    color: var(--forest-green);
+    overflow-x: hidden;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 50;
+    mix-blend-mode: difference;
+    color: #fff;
+}
+
+.backLink {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.3s ease;
+}
+
+.backLink:hover {
+    opacity: 0.6;
+}
+
+.logo {
+    font-family: var(--font-playfair);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.contentWrapper {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.imageCol {
+    width: 100%;
+    height: 60vh;
+    position: relative;
+}
+
+.imageContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.heroImage {
+    object-fit: cover;
+    object-position: center 20%;
+}
+
+.textCol {
+    width: 100%;
+    padding: 4rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cream-bg);
+}
+
+.textContent {
+    max-width: 600px;
+    width: 100%;
+}
+
+.title {
+    font-family: var(--font-playfair);
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    color: var(--forest-green);
+}
+
+.divider {
+    width: 40px;
+    height: 1px;
+    background-color: var(--gold-accent);
+    margin-bottom: 3rem;
+}
+
+.poem {
+    font-family: var(--font-playfair);
+    font-size: 1.25rem;
+    line-height: 2.2;
+    color: #4a4a4a;
+}
+
+.poem p {
+    margin-bottom: 2.5rem;
+}
+
+.finale {
+    font-size: 1.5rem;
+    color: var(--forest-green);
+    font-style: italic;
+    margin-top: 4rem;
+}
+
+.footerDetails {
+    margin-top: 6rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.cta {
+    position: relative;
+    text-decoration: none;
+    color: var(--forest-green);
+    font-weight: 600;
+}
+
+.cta::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--gold-accent);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease;
+}
+
+.cta:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Desktop Split Screen */
+@media (min-width: 992px) {
+    .contentWrapper {
+        flex-direction: row;
+    }
+
+    .imageCol {
+        width: 50%;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+
+    .textCol {
+        width: 50%;
+        padding: 8rem 4rem;
+        min-height: 100vh;
+    }
+
+    .title {
+        font-size: 3.5rem;
+    }
+
+    .poem {
+        font-size: 1.35rem;
+    }
+}

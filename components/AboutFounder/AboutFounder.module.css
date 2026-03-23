@@ -1,0 +1,104 @@
+.aboutFounder {
+    padding: 120px 0;
+    background-color: var(--cream-bg);
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 60px;
+}
+
+.imageWrapper {
+    flex: 0 0 calc(40% - 30px);
+    max-width: calc(40% - 30px);
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.08);
+    /* soft shadow */
+    border: 1px solid var(--gold-accent);
+    /* Optional thin gold border */
+    object-fit: cover;
+}
+
+.contentWrapper {
+    flex: 1;
+    max-width: 600px;
+}
+
+.label {
+    font-family: var(--font-inter);
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: var(--gold-accent);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.title {
+    font-family: var(--font-playfair);
+    line-height: 1.2;
+    color: var(--forest-green);
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.role {
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.story {
+    font-family: var(--font-inter);
+    font-size: 17px;
+    line-height: 1.8;
+    color: #4A4A4A;
+}
+
+.story p {
+    margin-bottom: 16px;
+}
+
+.signatureWrapper {
+    margin-top: 24px;
+}
+
+.signature {
+    font-family: var(--font-greatvibes), cursive, var(--font-playfair);
+    font-size: 24px;
+    color: var(--forest-green);
+}
+
+.quote {
+    font-family: var(--font-playfair);
+    font-style: italic;
+    font-size: 20px;
+    color: var(--forest-green);
+    margin-top: 30px;
+    border-left: 2px solid var(--gold-accent);
+    padding-left: 1.5rem;
+    margin-left: 0;
+}
+
+@media (max-width: 900px) {
+
+    .imageWrapper,
+    .contentWrapper {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
