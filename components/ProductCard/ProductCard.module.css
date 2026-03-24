@@ -1,28 +1,37 @@
 .card {
     display: flex;
     flex-direction: column;
-    transition: all 0.3s ease;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    cursor: pointer;
 }
 
 .imageContainer {
     position: relative;
     width: 100%;
     aspect-ratio: 4 / 5;
-    min-height: 300px;
+    min-height: 250px;
     overflow: hidden;
-    background: #f8f8f8;
+    background: var(--bg-secondary);
     margin-bottom: 1.25rem;
+    border-radius: 4px;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover .imageContainer {
+    box-shadow: 0 20px 40px rgba(31, 61, 43, 0.1);
+    transform: translateY(-8px);
 }
 
 .card:hover .image {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 .quickAdd {
@@ -31,23 +40,22 @@
     left: 0;
     right: 0;
     background: rgba(255, 255, 255, 0.95);
-    padding: 14px;
+    padding: 16px;
     text-transform: uppercase;
     font-size: 0.75rem;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     font-weight: 700;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     transform: translateY(102%);
     opacity: 0;
     z-index: 50;
     border: none;
     cursor: pointer;
-    color: var(--noir-de-vigne);
+    color: var(--forest-green);
 }
 
 .quickAdd:hover {
-    background: var(--accent-main);
-    /* Emerald Green */
+    background: var(--forest-green);
     color: var(--white);
 }
 
@@ -58,27 +66,75 @@
 
 .info {
     text-align: center;
+    transition: transform 0.4s ease;
+}
+
+.card:hover .info {
+    transform: translateY(-4px);
 }
 
 .category {
     display: block;
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--accent-secondary);
-    /* Egyptian Earth */
+    letter-spacing: 1.5px;
+    color: var(--gold-accent);
     margin-bottom: 0.5rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.card:hover .category {
+    color: var(--forest-green);
 }
 
 .name {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 500;
-    margin-bottom: 0.5rem;
-    color: var(--text-primary);
+    margin-bottom: 0.4rem;
+    color: var(--forest-green);
+    transition: color 0.3s ease;
+}
+
+.card:hover .name {
+    color: var(--gold-accent);
 }
 
 .price {
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
-    color: var(--antique-gold);
+    color: var(--forest-green);
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .imageContainer {
+        min-height: 200px;
+    }
+
+    .quickAdd {
+        transform: translateY(0);
+        opacity: 0.9;
+        font-size: 0.7rem;
+        padding: 12px;
+    }
+
+    .card:hover .imageContainer {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .card:hover .image {
+        transform: scale(1.05);
+    }
+    
+    .card:hover .info {
+        transform: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .imageContainer {
+        min-height: 180px;
+    }
 }

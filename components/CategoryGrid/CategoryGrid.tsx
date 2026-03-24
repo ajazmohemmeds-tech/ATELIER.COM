@@ -54,7 +54,7 @@ const CategoryGrid = () => {
                                 whileHover={{ scale: 1.05 }}
                                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                             >
-                                <img src={cat.image} alt={cat.name} className={styles.image} />
+                                <img src={cat.image} alt={cat.name} className={styles.image} loading="lazy" />
                             </motion.div>
                             <h3 className={styles.catName}>{cat.name}</h3>
                         </Link>

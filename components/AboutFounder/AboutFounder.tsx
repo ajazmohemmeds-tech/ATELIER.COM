@@ -19,6 +19,7 @@ const AboutFounder = () => {
                         src="/images/about/founder.jpg"
                         alt="Naushaba, Founder of Atelier"
                         className={styles.image}
+                        loading="lazy"
                     />
                 </motion.div>
 

@@ -27,6 +27,11 @@ export const metadata = {
   description: 'Handmade and curated gifts for every occasion. Frames, hampers, bouquets, and more.',
 };
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
+
 export default function RootLayout({
   children,
 }: {

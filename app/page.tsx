@@ -35,10 +35,10 @@ export default function Home() {
             {/* Featured Collections */}
             <motion.section
                 {...fadeInUp}
-                style={{ background: 'var(--white)', padding: '120px 0' }}
+                style={{ background: 'var(--white)', padding: 'var(--section-padding) 0' }}
             >
                 <div className="container">
-                    <h2 style={{ textAlign: 'center', fontSize: '3rem', marginBottom: '4rem' }}>Featured Collections</h2>
+                    <h2 style={{ textAlign: 'center', fontSize: 'var(--h2-size)', marginBottom: '3rem' }}>Featured Collections</h2>
                     <CategoryGrid />
                 </div>
             </motion.section>
@@ -46,10 +46,10 @@ export default function Home() {
             {/* Best Sellers */}
             <motion.section
                 {...fadeInUp}
-                style={{ background: 'var(--cream-bg)', padding: '120px 0' }}
+                style={{ background: 'var(--cream-bg)', padding: 'var(--section-padding) 0' }}
             >
                 <div className="container">
-                    <h2 style={{ textAlign: 'center', fontSize: '3rem', marginBottom: '4rem' }}>Best Sellers</h2>
+                    <h2 style={{ textAlign: 'center', fontSize: 'var(--h2-size)', marginBottom: '3rem' }}>Best Sellers</h2>
                     <FeaturedProducts />
                 </div>
             </motion.section>
@@ -67,9 +67,9 @@ export default function Home() {
             {/* Trust Badges (Keeping but themed) */}
             <motion.section
                 {...fadeInUp}
-                style={{ background: 'var(--forest-green)', padding: '120px 0', color: 'var(--cream-bg)' }}
+                style={{ background: 'var(--forest-green)', padding: 'var(--section-padding) 0', color: 'var(--cream-bg)' }}
             >
-                <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', textAlign: 'center', gap: '5rem' }}>
+                <div className="container trust-badges-grid">
                     {[
                         { icon: '⚜', title: 'Secure Payment', desc: 'Sophisticated encryption for your peace of mind and absolute security.' },
                         { icon: '📯', title: 'Express Delivery', desc: 'Handled with care, delivered with precision to your doorstep.' },

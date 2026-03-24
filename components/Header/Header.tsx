@@ -13,6 +13,7 @@ const Header = () => {
     const { isLoggedIn } = useUser();
     const [scrolled, setScrolled] = useState(false);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -38,7 +39,7 @@ const Header = () => {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3 }}
                     >
-                        <p>Free Shipping on orders over ₹999</p>
+                        <p>Free Shipping on orders over ₹1999</p>
                     </motion.div>
                 )}
             </AnimatePresence>
@@ -55,6 +56,18 @@ const Header = () => {
                             <Link href={item.href}>{item.name}</Link>
                         </motion.div>
                     ))}
+                </div>
+
+                <div className={styles.mobileMenuToggle}>
+                    <motion.button
+                        className={styles.hamburger}
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        whileTap={{ scale: 0.9 }}
+                    >
+                        <div className={`${styles.line} ${isMobileMenuOpen ? styles.line1Active : ''}`}></div>
+                        <div className={`${styles.line} ${isMobileMenuOpen ? styles.line2Active : ''}`}></div>
+                        <div className={`${styles.line} ${isMobileMenuOpen ? styles.line3Active : ''}`}></div>
+                    </motion.button>
                 </div>
 
                 <motion.div
@@ -102,6 +115,40 @@ const Header = () => {
                     </motion.button>
                 </div>
             </div>
+
+            <AnimatePresence>
+                {isMobileMenuOpen && (
+                    <motion.div
+                        className={styles.mobileOverlay}
+                        initial={{ opacity: 0, x: -100 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -100 }}
+                        transition={{ duration: 0.4, ease: "easeOut" }}
+                    >
+                        <nav className={styles.mobileNav}>
+                            {navItems.map((item, index) => (
+                                <motion.div
+                                    key={item.name}
+                                    initial={{ opacity: 0, x: -20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: 0.1 * index }}
+                                >
+                                    <Link
+                                        href={item.href}
+                                        className={styles.mobileNavLink}
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                    >
+                                        {item.name}
+                                    </Link>
+                                </motion.div>
+                            ))}
+                        </nav>
+                        <div className={styles.mobileMenuFooter}>
+                            <p>© 2024 Atelier. All rights reserved.</p>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
 
             <SearchModal
                 isOpen={isSearchOpen}

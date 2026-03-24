@@ -6,7 +6,7 @@ import styles from './Footer.module.css';
 
 const Footer = () => {
     return (
-        <footer className={styles.footer}>
+        <footer className={`${styles.footer} section-spacing`}>
             <div className="container">
                 <div className={styles.grid}>
                     <div className={styles.brand}>
