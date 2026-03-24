@@ -1,5 +1,5 @@
 .aboutFounder {
-    padding: 120px 0;
+    padding: var(--section-padding) 0;
     background-color: var(--cream-bg);
 }
 
@@ -7,22 +7,20 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 60px;
+    gap: 4rem;
 }
 
 .imageWrapper {
-    flex: 0 0 calc(40% - 30px);
-    max-width: calc(40% - 30px);
+    flex: 0 0 calc(40% - 2rem);
+    max-width: calc(40% - 2rem);
 }
 
 .image {
     width: 100%;
     height: auto;
-    border-radius: 12px;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.08);
-    /* soft shadow */
+    border-radius: 4px;
+    box-shadow: 0px 10px 30px rgba(31, 61, 43, 0.08);
     border: 1px solid var(--gold-accent);
-    /* Optional thin gold border */
     object-fit: cover;
 }
 
@@ -33,12 +31,12 @@
 
 .label {
     font-family: var(--font-inter);
-    font-size: 13px;
-    letter-spacing: 2px;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
     color: var(--gold-accent);
     text-transform: uppercase;
-    margin-bottom: 1rem;
-    font-weight: 600;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
 }
 
 .title {
@@ -51,12 +49,12 @@
 }
 
 .name {
-    font-size: 36px;
+    font-size: clamp(2rem, 5vw, 2.5rem);
     font-weight: 700;
 }
 
 .role {
-    font-size: 24px;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
     font-style: italic;
     font-weight: 500;
     opacity: 0.9;
@@ -64,41 +62,75 @@
 
 .story {
     font-family: var(--font-inter);
-    font-size: 17px;
+    font-size: 1.05rem;
     line-height: 1.8;
-    color: #4A4A4A;
+    color: var(--forest-green);
+    opacity: 0.8;
 }
 
 .story p {
-    margin-bottom: 16px;
+    margin-bottom: 1.2rem;
 }
 
 .signatureWrapper {
-    margin-top: 24px;
+    margin-top: 2rem;
 }
 
 .signature {
     font-family: var(--font-greatvibes), cursive, var(--font-playfair);
-    font-size: 24px;
+    font-size: 1.8rem;
     color: var(--forest-green);
 }
 
 .quote {
     font-family: var(--font-playfair);
     font-style: italic;
-    font-size: 20px;
+    font-size: 1.2rem;
     color: var(--forest-green);
-    margin-top: 30px;
+    margin-top: 2.5rem;
     border-left: 2px solid var(--gold-accent);
     padding-left: 1.5rem;
     margin-left: 0;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
+    .container {
+        gap: 3rem;
+    }
+}
 
-    .imageWrapper,
-    .contentWrapper {
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 2.5rem;
+    }
+
+    .imageWrapper {
         flex: 0 0 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .contentWrapper {
         max-width: 100%;
+    }
+
+    .title {
+        align-items: center;
+    }
+
+    .quote {
+        border-left: none;
+        border-top: 1px solid var(--gold-accent);
+        border-bottom: 1px solid var(--gold-accent);
+        padding: 1.5rem 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .aboutFounder {
+        padding: 60px 0;
     }
 }

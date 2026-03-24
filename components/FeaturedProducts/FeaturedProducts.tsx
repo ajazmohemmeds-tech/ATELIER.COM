@@ -29,7 +29,7 @@ const FeaturedProducts = () => {
     const featured = products.filter(p => p.featured);
 
     return (
-        <section className="container" style={{ padding: '80px 0' }}>
+        <section className="container section-spacing">
             <motion.div
                 className={styles.header}
                 initial={{ opacity: 0, y: 20 }}

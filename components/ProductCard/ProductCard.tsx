@@ -15,7 +15,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     return (
         <div className={styles.card}>
             <div className={styles.imageContainer}>
-                <img src={product.image} alt={product.name} className={styles.image} />
+                <img src={product.image} alt={product.name} className={styles.image} loading="lazy" />
                 <button className={styles.quickAdd} onClick={(e) => {
                     e.stopPropagation();
                     addToCart(product);

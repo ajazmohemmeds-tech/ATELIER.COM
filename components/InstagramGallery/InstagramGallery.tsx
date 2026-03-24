@@ -35,7 +35,7 @@ const InstagramGallery = () => {
                                 viewport={{ once: false, margin: "-50px" }}
                                 transition={{ duration: 0.8, delay: i * 0.1 }}
                             >
-                                <img src={story.src} alt={`Atelier Story ${i + 1}`} className={styles.image} />
+                                <img src={story.src} alt={`Atelier Story ${i + 1}`} className={styles.image} loading="lazy" />
                                 <div className={styles.overlay}>
                                     <span>View Story</span>
                                 </div>

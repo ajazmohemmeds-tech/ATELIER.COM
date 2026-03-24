@@ -64,6 +64,7 @@ const Hero = () => {
                             src="/images/hero/luxury_hamper.png"
                             alt="Luxury Gift Hamper"
                             className={styles.heroImage}
+                            loading="lazy"
                         />
                         <div className={styles.imageAccent}></div>
                     </motion.div>

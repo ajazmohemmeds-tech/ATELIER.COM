@@ -6,7 +6,6 @@
     flex-direction: column;
     align-items: center;
     overflow-x: hidden;
-    /* Richness grain effect */
 }
 
 .container::before {
@@ -24,33 +23,34 @@
 
 .header {
     width: 100%;
-    padding: 2rem 4rem;
+    padding: 2rem var(--container-padding);
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 50;
-    color: #111111;
+    color: var(--forest-green);
 }
 
 .backLink {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     text-decoration: none;
-    color: #444444;
-    transition: color 0.3s ease;
+    color: var(--forest-green);
+    opacity: 0.8;
+    transition: all 0.3s ease;
 }
 
 .backLink:hover {
-    color: #111111;
+    opacity: 1;
 }
 
 .logo {
     font-family: var(--font-playfair);
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 700;
     letter-spacing: 0.1em;
 }
@@ -58,60 +58,56 @@
 .content {
     max-width: 720px;
     width: 100%;
-    padding: 120px 2rem;
+    padding: clamp(60px, 15vw, 120px) var(--container-padding);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     background: transparent;
-    border-radius: 20px;
     position: relative;
     z-index: 2;
-    /* Vertical Rhythm */
-    gap: 32px;
-    /* Subtle depth */
-    box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.03);
+    gap: 2rem;
 }
 
 .label {
     font-family: var(--font-inter), sans-serif;
-    font-size: 12px;
+    font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 3px;
-    color: #A8A29E;
+    color: var(--gold-accent);
     font-weight: 500;
 }
 
 .title {
     font-family: var(--font-playfair);
-    font-size: 42px;
+    font-size: clamp(1.8rem, 6vw, 2.6rem);
     font-weight: 500;
-    color: #111111;
+    color: var(--forest-green);
     line-height: 1.2;
     margin: 0;
-    /* For Apple-style blur animation, we'll use framer motion */
 }
 
 .hook {
     font-family: var(--font-inter), sans-serif;
-    font-size: 22px;
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
     font-weight: 400;
-    color: #444444;
+    color: var(--forest-green);
+    opacity: 0.85;
     margin: 0;
 }
 
 .body {
     font-family: var(--font-inter), sans-serif;
-    font-size: 17px;
+    font-size: clamp(0.95rem, 2.5vw, 1.05rem);
     line-height: 1.8;
-    color: #555555;
-    font-weight: 400;
+    color: var(--forest-green);
+    opacity: 0.75;
     max-width: 640px;
     margin: 0;
 }
 
 .body p {
-    margin-bottom: 1.8rem;
+    margin-bottom: 1.5rem;
 }
 
 .body p:last-child {
@@ -120,10 +116,9 @@
 
 .signatureLines {
     font-family: var(--font-inter), sans-serif;
-    font-size: 26px;
+    font-size: clamp(1.2rem, 4vw, 1.6rem);
     font-weight: 500;
-    color: #C6A15B;
-    /* Soft Gold */
+    color: var(--gold-accent);
     line-height: 1.4;
     margin: 0;
 }
@@ -140,46 +135,27 @@
 
 .button {
     font-family: var(--font-inter), sans-serif;
-    font-size: 14px;
-    padding: 14px 32px;
+    font-size: 0.85rem;
+    padding: 1rem 2.5rem;
     border-radius: 999px;
-    background-color: #111111;
-    color: #FFFFFF;
+    background-color: var(--forest-green);
+    color: var(--cream-bg);
     text-decoration: none;
     font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     transition: all 0.3s ease;
     display: inline-block;
 }
 
 .button:hover {
-    background-color: #2A2A2A;
-    transform: scale(1.04);
+    background-color: var(--noir);
+    transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
-    .header {
-        padding: 1.5rem 2rem;
-    }
-
     .content {
-        padding: 80px 1.5rem;
-        gap: 28px;
-    }
-
-    .title {
-        font-size: 30px;
-    }
-
-    .hook {
-        font-size: 18px;
-    }
-
-    .body {
-        font-size: 15px;
-    }
-
-    .signatureLines {
-        font-size: 22px;
+        gap: 1.5rem;
     }
 
     .button {
